@@ -25,7 +25,7 @@ class TareaSimple(val costoDeInfraestructura: Int, val horasEstmadas: Int, overr
 }
 
 class TareaDeIntegracion(val encargado: Empleado, override val responsable: Empleado): Tarea{
-    val listaDeSubtareas = mutableListOf<TareaSimple>()
+    val listaDeSubtareas = mutableListOf<Tarea>()
     fun horas() = listaDeSubtareas.sumBy { it.horasNecesarias() }
     override fun horasNecesarias() = this.horas() + this.horas()/8
 
